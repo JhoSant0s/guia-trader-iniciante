@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Trader Iniciante em Criptomoedas</title>
+    <meta name="description" content="Guia completo para iniciantes no trading de criptomoedas. Aprenda os fundamentos e comece sua jornada de forma segura.">
+    <meta name="keywords" content="criptomoedas, bitcoin, ethereum, trading, investimentos, trader iniciante">
+    <meta name="author" content="Seu Nome">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.1/collection/components/icon/svg/logo-bitcoin.svg">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Guia do Trader Iniciante em Criptomoedas">
+    <meta property="og:description" content="Comece sua jornada no mundo cripto de forma segura e confiante com nosso guia completo!">
+    <meta property="og:type" content="website">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #f39c12;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #8e44ad);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            opacity: 0.1;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .tip-box {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .tip-box h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .quiz-box {
+            background-color: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .quiz-box h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 300px;
+            background-color: var(--accent);
+        }
+        
+        .btn-large:hover {
+            background-color: #e67e22;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .checkbox-label {
+            cursor: pointer;
+        }
+        
+        .story-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .story-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .toggle-content {
+            display: none;
+            padding: 10px;
+            background-color: rgba(44, 62, 80, 0.05);
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .toggle-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 600;
+            padding: 5px 0;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toggle-btn::after {
+            content: "▼";
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+        
+        .toggle-btn.active::after {
+            content: "▲";
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* Botão flutuante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Barra de progresso */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: transparent;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            background: var(--accent);
+            width: 0%;
+        }
+        
+        /* Botão voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background-color: #2980b9;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+        
+        /* Animação de loading */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        .loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spinner 0.8s linear infinite;
+        }
+        
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Barra de progresso -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>🚀 Guia do Trader Iniciante em Criptomoedas</h1>
+            <p class="subtitle">Comece sua jornada no mundo cripto de forma segura e confiante</p>
+        </header>
+        
+        <div class="section">
+            <div class="section-icon">💡</div>
+            <h2>O que são criptomoedas?</h2>
+            <p>Criptomoedas são ativos digitais que utilizam criptografia para garantir transações seguras e descentralizadas. Elas operam em uma tecnologia chamada <strong>blockchain</strong>, que funciona como um livro razão público e imutável.</p>
+            
+            <p>As principais criptomoedas incluem:</p>
+            <ul>
+                <li><strong>Bitcoin (BTC)</strong> - A primeira e mais conhecida criptomoeda</li>
+                <li><strong>Ethereum (ETH)</strong> - Conhecida por seus contratos inteligentes</li>
+                <li>E muitas outras que você logo conhecerá</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>💡 VOCÊ SABIA?</h4>
+                <p>O Bitcoin foi criado em 2009 por uma pessoa (ou grupo) usando o pseudônimo Satoshi Nakamoto. Até hoje, ninguém sabe quem realmente é!</p>
+            </div>
+            
+            <button class="toggle-btn">Entenda melhor como funciona o blockchain</button>
+            <div class="toggle-content">
+                <p>O blockchain é como um livro contábil digital onde todas as transações são registradas de forma transparente. Cada "bloco" contém várias transações, e esses blocos são conectados em uma "corrente". Uma vez registrada, a informação não pode ser alterada, o que garante segurança e confiabilidade.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-icon">🏦</div>
+            <h2>Comece em 3 passos simples</h2>
+            
+            <ol>
+                <li>
+                    <strong>Escolha uma corretora confiável</strong>
+                    <ul>
+                        <li>Binance (internacional)</li>
+                        <li>Bybit (internacional)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Crie sua conta</strong>
+                    <ul>
+                        <li>Acesse o site</li>
+                        <li>Preencha seus dados</li>
+                        <li>Envie seus documentos (processo KYC)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Faça seu primeiro depósito</strong>
+                    <ul>
+                        <li>Transfira reais via PIX</li>
+                        <li>Comece com um valor que você esteja confortável para aprender</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="tip-box">
+                <h4>📌 DICA RÁPIDA</h4>
+                <p>Compare as taxas entre corretoras antes de decidir. Pequenas diferenças podem impactar seus ganhos no longo prazo!</p>
+            </div>
+            
+            <button class="toggle-btn">Como funciona o processo de verificação (KYC)?</button>
+            <div class="toggle-content">
+                <p>KYC significa "Conheça Seu Cliente" (Know Your Customer). É um processo de verificação de identidade exigido por regulamentações anti-lavagem de dinheiro. Geralmente, você precisará enviar uma foto do seu documento de identidade e uma selfie segurando o documento. O processo costuma ser rápido e é essencial para sua segurança.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-icon">📊</div>
+            <h2>Análise técnica descomplicada</h2>
+            
+            <p>A análise técnica é como "ler" os gráficos para tomar decisões. Foque nestes indicadores essenciais:</p>
+            
+            <ul>
+                <li><strong>Candlesticks</strong>: São as "velinhas" que mostram a batalha entre compradores e vendedores</li>
+                <li><strong>Suporte e Resistência</strong>: "Pisos" e "tetos" onde os preços tendem a reagir</li>
+                <li><strong>Médias Móveis</strong>: Linhas que mostram a tendência do preço</li>
+                <li><strong>RSI (Índice de Força Relativa)</strong>: Indica se um ativo está "caro" ou "barato"</li>
+            </ul>
+            
+            <div class="quiz-box">
+                <h4>🧠 MINI-QUIZ</h4>
+                <p><strong>Quando o RSI está acima de 70, o ativo está provavelmente...</strong></p>
+                <div>
+                    <input type="radio" id="answer1" name="quiz1">
+                    <label for="answer1">Sobrevendido</label>
+                </div>
+                <div>
+                    <input type="radio" id="answer2" name="quiz1">
+                    <label for="answer2">Sobrecomprado</label>
+                </div>
+                <div>
+                    <input type="radio" id="answer3" name="quiz1">
+                    <label for="answer3">Na média</label>
+                </div>
+                <button class="toggle-btn">Ver resposta</button>
+                <div class="toggle-content">
+                    <p>✅ <strong>Resposta correta:</strong> Sobrecomprado! Quando o RSI está acima de 70, é um sinal de que o ativo pode estar sobrecomprado e uma correção de preço pode estar próxima.</p>
+                </div>
+            </div>
+            
+            <button class="toggle-btn">Aprenda a identificar padrões de candlestick</button>
+            <div class="toggle-content">
+                <p>Os padrões de candlestick mais comuns e confiáveis incluem o "Martelo", "Estrela Cadente", "Engolfo de Alta" e "Engolfo de Baixa". Esses padrões podem indicar possíveis reversões de tendência ou continuações. Estude-os com atenção, pois podem oferecer excelentes oportunidades de entrada no mercado.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-icon">🛡️</div>
+            <h2>Proteja seu dinheiro: Gerenciamento de risco</h2>
+            
+            <p>O segredo dos traders de sucesso? Não é acertar sempre, é perder pouco quando erram!</p>
+            
+            <ul>
+                <li><strong>Regra de ouro</strong>: Nunca arrisque mais de 1-2% do seu capital por operação</li>
+                <li><strong>Stop Loss</strong>: Defina sempre onde vai sair se o mercado for contra você</li>
+                <li><strong>Tamanho da posição</strong>: Calcule com base no seu capital e na distância do stop loss</li>
+                <li><strong>Controle emocional</strong>: Não opere com medo ou ganância</li>
+            </ul>
+            
+            <div class="story-box">
+                <h4>📖 HISTÓRIA REAL</h4>
+                <p>Maria começou com R$1.000 e usava 5% por trade. Após algumas perdas, ficou com R$850. João começou com R$1.000 mas usava apenas 1% por trade. Após as mesmas perdas, ainda tinha R$970. Quem tem mais chances de recuperar e seguir no jogo?</p>
+            </div>
+            
+            <button class="toggle-btn">Como calcular o tamanho correto da posição?</button>
+            <div class="toggle-content">
+                <p>Para calcular o tamanho ideal da sua posição, use a fórmula: (Capital × Risco%) ÷ (Preço de Entrada − Preço do Stop Loss). Por exemplo, se você tem R$10.000, está disposto a arriscar 1%, e a distância entre a entrada e o stop é de 5%, sua posição deve ser de R$200. Isso garantirá que você não perca mais do que R$100 (1% do seu capital) se o stop for acionado.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-icon">✅</div>
+            <h2>Seu checklist diário</h2>
+            
+            <p>Antes de qualquer operação, faça este ritual:</p>
+            
+            <div class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="checkbox-label">Analisar o mercado macro e notícias importantes</div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="checkbox-label">Verificar a tendência do Bitcoin (que influencia todo o mercado)</div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="checkbox-label">Identificar níveis chave de suporte e resistência</div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="checkbox-label">Definir: ponto de entrada + alvo de lucro + stop loss</div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="checkbox-label">Calcular o tamanho ideal da posição</div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="checkbox-label">Registrar a operação no seu diário de trades</div>
+            </div>
+            
+            <button class="toggle-btn">Por que manter um diário de trades?</button>
+            <div class="toggle-content">
+                <p>Um diário de trades permite que você analise seus padrões, identifique erros recorrentes e melhore suas estratégias. Registre a data, o par negociado, os motivos para entrada, o tamanho da posição, os preços de entrada, saída e stop, e suas emoções durante a operação. Com o tempo, você verá padrões claros que o ajudarão a melhorar significativamente.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-icon">🔗</div>
+            <h2>Quer ir além? Junte-se à nossa comunidade!</h2>
+            
+            <p><strong>O que você receberá GRATUITAMENTE no nosso grupo:</strong></p>
+            <ul>
+                <li>Análises diárias das principais criptomoedas</li>
+                <li>Alertas de oportunidades em tempo real</li>
+                <li>Setups completos (entrada, alvo e stop)</li>
+                <li>Acesso a traders experientes para tirar dúvidas</li>
+            </ul>
+            
+            <a href="https://linktr.ee/_ojhonatan_" class="btn btn-large">ENTRE EM CONTATO CONOSCO 👉</a>
+        </div>
+        
+        <footer>
+            <p>Sua jornada está apenas começando. Vamos trilhar este caminho juntos!</p>
+            <p>🦉 Guiando você com inteligência no mundo das criptomoedas.</p>
+            <p>© 2025 - Guia do Trader Iniciante em Criptomoedas</p>
+        </footer>
+    </div>
+    
+    <!-- Botão flutuante de WhatsApp -->
+    <a href="https://wa.me/5511943809941" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Botão voltar ao topo -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        // Remover loader após carregamento da página
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loader').classList.add('fade-out');
+                // Iniciar animação das seções
+                animateSections();
+            }, 500);
+        });
+        
+        // Animação das seções ao scroll
+        function animateSections() {
+            const sections = document.querySelectorAll('.section');
+            
+            function checkScroll() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.85) {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Verificar inicialmente e depois no scroll
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        }
+        
+        // Interatividade dos checkboxes
+        document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+            checkbox.addEventListener('click', function() {
+                this.classList.toggle('checked');
+                // Salvar estado no localStorage
+                const checkboxes = document.querySelectorAll('.checkbox');
+                const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+                localStorage.setItem('checklistStates', JSON.stringify(states));
+            });
+        });
+        
+        // Restaurar estado dos checkboxes
+        function restoreCheckboxStates() {
+            const savedStates = localStorage.getItem('checklistStates');
+            if (savedStates) {
+                const states = JSON.parse(savedStates);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((checkbox, index) => {
+                    if (states[index]) {
+                        checkbox.classList.add('checked');
+                    }
+                });
+            }
+        }
+        
+        // Chamar para restaurar estados
+        document.addEventListener('DOMContentLoaded', restoreCheckboxStates);
+        
+        // Botões de toggle
+        document.querySelectorAll('.toggle-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                var content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+        
+        // Mini-quiz
+        document.getElementById('answer2').addEventListener('change', function() {
+            if (this.checked) {
+                alert('Correto! 🎉 Quando o RSI está acima de 70, o ativo está sobrecomprado.');
+            }
+        });
+        
+        document.querySelectorAll('#answer1, #answer3').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    alert('Ops! Tente novamente. Dica: Pense no que acontece quando muitas pessoas compram um ativo rapidamente.');
+                }
+            });
+        });
+        
+        // Barra de progresso
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Mostrar/esconder botão voltar ao topo
+            if (winScroll > 300) {
+                document.querySelector('.back-to-top').style.display = 'flex';
+            } else {
+                document.querySelector('.back-to-top').style.display = 'none';
+            }
+        };
+        
+        // Botão voltar ao topo
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
